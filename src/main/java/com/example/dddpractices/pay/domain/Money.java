@@ -10,6 +10,10 @@ public class Money {
     protected Money() {
     }
 
+//    public Money(int money) {
+//        this.money = money;
+//    }
+
     private Money(int money) {
         this.money = money;
     }

@@ -23,7 +23,7 @@ public class Order {
     private Money totalAmount;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "order_line", joinColumns = @JoinColumn(name = "oreder_number"))
+    @CollectionTable(name = "order_line", joinColumns = @JoinColumn(name = "order_number"))
     @OrderColumn(name = "line_idx")
     private List<OrderLine> orderLines;
 }

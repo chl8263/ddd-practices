@@ -3,8 +3,10 @@ package com.example.dddpractices.product.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+import java.io.Serializable;
+
 @Embeddable
-public class ProductId {
+public class ProductId implements Serializable {
 
     @Column
     private String productId;

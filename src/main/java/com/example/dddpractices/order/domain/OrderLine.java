@@ -2,6 +2,8 @@ package com.example.dddpractices.order.domain;
 
 import com.example.dddpractices.pay.domain.Money;
 import com.example.dddpractices.product.domain.ProductId;
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.AttributeOverrides;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
@@ -12,12 +14,18 @@ public class OrderLine {
     private ProductId productId;
 
     @Column
+    @AttributeOverrides(
+            @AttributeOverride(name = "money", column = @Column(name = "price"))
+    )
     private Money price;
 
     @Column
     private int quantity;
 
     @Column
+    @AttributeOverrides({
+            @AttributeOverride(name = "money", column = @Column(name = "amount")),
+    })
     private Money amounts;
 
     protected OrderLine() {}
