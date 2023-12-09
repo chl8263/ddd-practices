@@ -3,10 +3,12 @@ package com.example.dddpractices.order.domain;
 import com.example.dddpractices.pay.domain.Money;
 import com.example.dddpractices.pay.util.MoneyConverter;
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.util.List;
 
 @Entity
+@Getter
 @Table(name = "purchase_order")
 @Access(AccessType.FIELD)
 public class Order {
